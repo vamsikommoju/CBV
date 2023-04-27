@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block b1 %}
+    {{msg}}
+    <!-- {% if obj  %} -->
+        {% for i in obj %}
+            <a class="btn btn-dark" href="{{i.id}}">{{i.tname}}</a>
+        {% endfor %}
+    <!-- {% endif %} -->
+{% endblock  %}

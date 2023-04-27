@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block b1 %}
+    {{msg}}
+    {% if obj1 %}
+        {{obj1.tname}}
+        <style>
+            table,th,td{
+                margin: auto;border: 10px solid black;text-align: center;
+            }
+        </style>
+        <table>
+            <thead>
+                <tr style="text-align: center;background-color: black;color: white;">
+                    <th>SNAME</th>
+                    <th>SUBJECT</th>
+                    <th>TNAME</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in obj1.teacher.all %}
+                    <thead>
+                        <tr style="text-align: center;background-color: rgb(15, 13, 13);color: rgb(246, 240, 240);">
+                            <td>{{i.sname}}</td>
+                            <td>{{i.subject}}</td>
+                            <td>{{i.tname}}</td>
+                        </tr>
+                    </thead>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock  %}
